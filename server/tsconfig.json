@@ -1,0 +1,37 @@
+{
+  "extends": "./node_modules/@tsconfig/node24/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "target": "ESNext",
+    "types": ["node"],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "sourceMap": true, // debugging support
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true, // linting
+    "noEmitOnError": true, // prevents broken builds — excellent for CI/CD
+    "noUncheckedIndexedAccess": true, // →  helps prevent undefined bugs
+    "noImplicitOverride": true, // → great for class safety
+    "noFallthroughCasesInSwitch": true, //  avoids logic bugs
+    "skipLibCheck": true, // → speeds up builds
+    "noUncheckedSideEffectImports": true, // checks if the files exits or not
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "noPropertyAccessFromIndexSignature": true,
+    "erasableSyntaxOnly": true,
+    "noErrorTruncation": false, // use true for debug purpose -> shows full error if true
+    "exactOptionalPropertyTypes": true,
+    // if using some js
+    "allowJs": true,
+    "checkJs": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
