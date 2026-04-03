@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summarizer</title>
+    <meta name="description" content="Summarize your text effortlessly with the Summarizer." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+
+      <header>
+        <div class="header-title">
+          <span class="header-title-line-1">text</span>
+          <span class="header-title-line-2">Summarizer</span>
+        </div>
+      </header>
+
+      <main>
+
+        <div class="card" id="input-card">
+          <span class="card-label">Input</span>
+          <textarea
+            id="text-input-area"
+            placeholder="Paste your text here…"
+            aria-label="Paste text here to summarize"
+          ></textarea>
+          <div class="slider-row">
+            <span class="slider-label">Length</span>
+            <input
+              type="range"
+              id="summary-length-input"
+              min="1"
+              max="100"
+              value="10"
+              step="1"
+              aria-labelledby="summary-length-text"
+              disabled
+            />
+            <span class="slider-val" id="summary-length-text">10 words</span>
+          </div>
+          <button class="btn btn-primary" id="summarize-button" disabled>Summarize</button>
+        </div>
+
+        <div class="card" id="output-card">
+          <div class="output-header">
+            <span class="card-label">Summary</span>
+            <span class="copied-badge" id="copied-badge">Copied!</span>
+          </div>
+
+          <div class="output-wrap">
+            <textarea
+              id="summary-output-area"
+              placeholder="Your summary will appear here…"
+              aria-label="Summary of text"
+              disabled
+            ></textarea>
+
+            <div class="loading-section" id="loading-section" aria-live="polite">
+              <div class="spinner"></div>
+              <span class="loading-text">Summarizing…</span>
+            </div>
+
+            <div class="error-section" id="error-section" aria-live="assertive">
+              <div id="error-message" class="error-message"></div>
+              <button class="btn btn-outline" id="dismiss-error-button">Dismiss</button>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-secondary" id="copy-button" disabled>Copy</button>
+            <button class="btn btn-secondary" id="clear-button" disabled>Clear</button>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
