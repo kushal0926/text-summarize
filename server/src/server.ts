@@ -19,7 +19,7 @@ export const createServer = (): Express => {
   // connecting frontend apps
   server.use(
     cors({
-      origin: "*", // frontend localhost
+      origin: "http://localhost:5173", // frontend localhost
       credentials: false,
     }),
   );

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --custom-white: #f9f6f0;
+    --custom-black: #1c1917;
+    --custom-font: "Orbitron", sans-serif;
+    --color-cream: var(--custom-white);
+    --color-ink: var(--custom-black);
+    --font-orb: var(--custom-font);
+}
+
+@layer components {
+    .orb {
+        @apply font-orb;
+    }
+}
+
+body {
+  background-color: var(--custom-black);
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid #121212;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+
+/* reset css */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
